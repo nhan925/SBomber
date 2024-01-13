@@ -70,6 +70,7 @@ public class enemy_lv2_move : MonoBehaviour
         if (collision.CompareTag("Explosion"))
         {
             anim.SetBool("die", true);
+            GetComponent<Collider2D>().enabled = false;
             enabled = false;
             Destroy(gameObject, 1f);
             bomb_ctrl.IncreaseScrore(30);

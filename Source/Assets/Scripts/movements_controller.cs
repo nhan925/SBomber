@@ -55,37 +55,31 @@ public class movements_controller : MonoBehaviour
         {
             anim.SetInteger("state", side);
             sp.flipX = false;
-            setDirection(Vector2.left);
         }
         else if (xDir > 0)
         {
             sp.flipX = true;
             anim.SetInteger("state", side);
-            setDirection(Vector2.right);
         }
         else if (yDir < 0)
         {
             anim.SetInteger("state", down);
-            setDirection(Vector2.down);
         }
         else if (yDir > 0)
         {
             anim.SetInteger("state", up);
-            setDirection(Vector2.up);
         }
-        if (Input.GetButtonDown("Cancel") && !pt.isPause)
-        {
-            pt.PauseTimer();
-        }
-    }
-
-    private void FixedUpdate()
-    {
+        else anim.SetInteger("state", idle);
+        setDirection(new Vector2(xDir, yDir));
         Vector2 curPos = rb.position;
         Vector2 step = direction * speed * Time.fixedDeltaTime;
         rb.MovePosition(curPos + step);
         setDirection(Vector2.zero);
-        anim.SetInteger("state", idle);
+        if (Input.GetButtonDown("Cancel") && !pt.isPause)
+        {
+            pt.PauseTimer();
+        }
+
     }
 
     private void setDirection(Vector2 newDir) 

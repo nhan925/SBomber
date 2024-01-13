@@ -52,6 +52,7 @@ public class enemy_lv3_move : MonoBehaviour
         if (collision.CompareTag("Explosion"))
         {
             anim.SetInteger("state", die);
+            GetComponent<Collider2D>().enabled = false;
             enabled = false;
             Destroy(gameObject, 0.75f);
             bomb_ctrl.IncreaseScrore(50);

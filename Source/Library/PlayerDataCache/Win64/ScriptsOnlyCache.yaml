@@ -2208,4 +2208,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level_02.unity
   - Assets/Scenes/Level_03.unity
   - Assets/Scenes/Win.unity
-  playerPath: C:/Users/Windows/Downloads/SBomber/SBomber.exe
+  playerPath: D:/Documents - HCMUS/Nam 2 - HKI/Thuc hanh DSA/Project/Bomberman/Release/SBomber.exe

@@ -84,6 +84,7 @@ public class enemy_lv1_move : MonoBehaviour
         {
             anim.SetBool("die", true);
             enabled = false;
+            GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject, 1f);
             bomb_ctrl.IncreaseScrore(10);
             movements_ctrl.monsterCount--;
