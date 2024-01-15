@@ -55,13 +55,17 @@ public class enemy_lv3_move : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             enabled = false;
             Destroy(gameObject, 0.75f);
-            bomb_ctrl.IncreaseScrore(50);
-            movements_ctrl.monsterCount--;
         }
         else if (collision.CompareTag("Player"))
         {
             anim.SetInteger("state", attack);
         }
+    }
+
+    private void OnDestroy()
+    {
+        bomb_ctrl.IncreaseScrore(50);
+        movements_ctrl.monsterCount--;
     }
 }
 

@@ -1483,7 +1483,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 57bea74b5125a4cdd1aa494e07bc3341
+      Hash: 2c0de882b749eeedd9c52d47f6b0e1ea
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: movements_controller
@@ -2208,4 +2208,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level_02.unity
   - Assets/Scenes/Level_03.unity
   - Assets/Scenes/Win.unity
-  playerPath: D:/Documents - HCMUS/Nam 2 - HKI/Thuc hanh DSA/Project/Bomberman/Release/SBomber.exe
+  playerPath: C:/Users/Windows/Downloads/game debug/SBomber.exe

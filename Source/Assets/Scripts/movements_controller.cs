@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class movements_controller : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class movements_controller : MonoBehaviour
     audio_manager aud;
     [HideInInspector] public bool alive = true;
     PauseTime pt;
+    public bool existPortal = false;
 
 
     void Start()

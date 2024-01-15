@@ -73,8 +73,6 @@ public class enemy_lv2_move : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             enabled = false;
             Destroy(gameObject, 1f);
-            bomb_ctrl.IncreaseScrore(30);
-            movements_ctrl.monsterCount--;
         }
     }
 
@@ -93,5 +91,11 @@ public class enemy_lv2_move : MonoBehaviour
         {
             GetComponent<Collider2D>().isTrigger = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        bomb_ctrl.IncreaseScrore(30);
+        movements_ctrl.monsterCount--;
     }
 }

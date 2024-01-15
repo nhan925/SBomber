@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class enemy_lv1_move : MonoBehaviour
@@ -86,8 +87,6 @@ public class enemy_lv1_move : MonoBehaviour
             enabled = false;
             GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject, 1f);
-            bomb_ctrl.IncreaseScrore(10);
-            movements_ctrl.monsterCount--;
         }
     }
 
@@ -97,5 +96,11 @@ public class enemy_lv1_move : MonoBehaviour
         {
             GetComponent<Collider2D>().isTrigger = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        bomb_ctrl.IncreaseScrore(10);
+        movements_ctrl.monsterCount--;
     }
 }

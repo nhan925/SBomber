@@ -14,7 +14,7 @@ public class UI : MonoBehaviour
 
     public void setScoretext(string text)
     {
-        scoreText.text = text;
+        if (scoreText != null) scoreText.text = text;
     }
 
     public void setLivetext(string text)

@@ -9,9 +9,11 @@ public class destroy : MonoBehaviour
     [HideInInspector] public bool isBrick = false;
     private float curProb;
     [HideInInspector] public Vector3 spawnPortalPos;
+    movements_controller m_ctrl;
 
     void Start()
     {
+        m_ctrl = FindObjectOfType<movements_controller>();
         Destroy(gameObject, destroyTime);
     }
 
@@ -22,9 +24,10 @@ public class destroy : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (transform.position == spawnPortalPos)
+        if (transform.position == spawnPortalPos && !m_ctrl.existPortal)
         {
             Instantiate(portal, transform.position, Quaternion.identity);
+            m_ctrl.existPortal = true;
             return;
         }
         if (spawnItems.Length > 0 && Random.value < curProb && isBrick)
